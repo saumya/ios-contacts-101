@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contacts
 
 class ViewController: UIViewController {
 
@@ -23,6 +24,23 @@ class ViewController: UIViewController {
     
     @IBAction func getAllContacts() {
         print("getAllContacts")
+        
+        let store = CNContactStore()
+        
+        if CNContactStore.authorizationStatusForEntityType(.Contacts) == .NotDetermined {
+            // request permission from user
+            store.requestAccessForEntityType(.Contacts, completionHandler: {(authorized:Bool,error:NSError?)->Void in
+                if authorized {
+                    self.getContactsFromUserDevice(store)
+                }
+            })
+        }else{
+            self.getContactsFromUserDevice(store)
+        }
+    }
+    
+    private func getContactsFromUserDevice(store:CNContactStore){
+        print("getContactsFromUserDevice")
     }
 
 
