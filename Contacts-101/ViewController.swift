@@ -9,6 +9,7 @@
 import UIKit
 import Contacts
 
+
 class ViewController: UIViewController {
     
     var contactObjs:AnyObject = NSObject()
@@ -24,9 +25,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func getAllContacts() {
+    @IBAction func getAllContacts(sender:AnyObject) {
         print("getAllContacts")
-        
+        /*
         let store = CNContactStore()
         
         if CNContactStore.authorizationStatusForEntityType(.Contacts) == .NotDetermined {
@@ -38,7 +39,33 @@ class ViewController: UIViewController {
             })
         }else{
             self.getContactsFromUserDevice(store)
+        }*/
+        
+        /*
+        SaumyaUtilContact.requestForAccess{(accessGranted) in
+            if accessGranted {
+                //appDelegate.showMessage("Granted","Contact Access")
+                //self.onGotRequestGrant(callerRef)
+                self.onGotRequestGrant()
+            }else{
+                print("Not Granted!","Contact Access")
+            }
+        } 
+         */
+        
+        SaumyaUtilContact.requestForAccess { (accessGranted) in
+            if accessGranted {
+                //appDelegate.showMessage("Granted","Contact Access")
+                //self.onGotRequestGrant(callerRef)
+                self.onGotRequestGrant()
+            }else{
+                print("Not Granted!","Contact Access")
+            }
         }
+        
+    }
+    private func onGotRequestGrant(){
+        print("onGotRequestGrant")
     }
     
     private func getContactsFromUserDevice(store:CNContactStore){

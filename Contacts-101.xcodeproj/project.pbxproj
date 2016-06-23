@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5CB77681D1C486700ABE1BA /* SaumyaUtilContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB77671D1C486700ABE1BA /* SaumyaUtilContact.swift */; };
 		C5EFD0621D1BEC91000FAC82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EFD0611D1BEC91000FAC82 /* AppDelegate.swift */; };
 		C5EFD0641D1BEC92000FAC82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EFD0631D1BEC92000FAC82 /* ViewController.swift */; };
 		C5EFD0671D1BEC92000FAC82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EFD0651D1BEC92000FAC82 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5CB77671D1C486700ABE1BA /* SaumyaUtilContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaumyaUtilContact.swift; sourceTree = "<group>"; };
 		C5EFD05E1D1BEC91000FAC82 /* Contacts-101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contacts-101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EFD0611D1BEC91000FAC82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5EFD0631D1BEC92000FAC82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				C5EFD0611D1BEC91000FAC82 /* AppDelegate.swift */,
 				C5EFD0631D1BEC92000FAC82 /* ViewController.swift */,
+				C5CB77671D1C486700ABE1BA /* SaumyaUtilContact.swift */,
 				C5EFD0681D1BEC92000FAC82 /* Assets.xcassets */,
 				C5EFD06A1D1BEC92000FAC82 /* LaunchScreen.storyboard */,
 				C5EFD0651D1BEC92000FAC82 /* Main.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5EFD0641D1BEC92000FAC82 /* ViewController.swift in Sources */,
+				C5CB77681D1C486700ABE1BA /* SaumyaUtilContact.swift in Sources */,
 				C5EFD0621D1BEC91000FAC82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +290,7 @@
 				C5EFD0721D1BEC92000FAC82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
