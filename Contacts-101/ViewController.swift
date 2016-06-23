@@ -10,6 +10,8 @@ import UIKit
 import Contacts
 
 class ViewController: UIViewController {
+    
+    var contactObjs:AnyObject = NSObject()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,28 @@ class ViewController: UIViewController {
     
     private func getContactsFromUserDevice(store:CNContactStore){
         print("getContactsFromUserDevice")
+        do {
+            let groups = try store.groupsMatchingPredicate(nil)
+            let predicate = CNContact.predicateForContactsInGroupWithIdentifier(groups[0].identifier)
+            //let predicate = CNContact.predicateForContactsMatchingName("Joe")
+            let keysToFetch = [CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName),CNContactEmailAddressesKey]
+            
+            let contacts = try store.unifiedContactsMatchingPredicate(predicate, keysToFetch: keysToFetch)
+            self.contactObjs = contacts
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                //self.tableView.reloadData()
+                self.onGotContacts()
+            })
+            
+        } catch {
+            print(error)
+        }
     }
-
+    
+    private func onGotContacts(){
+        print("onGotContacts ============ ")
+        print(self.contactObjs)
+    }
 
 }
 
