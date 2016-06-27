@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         }
         
     }
-    private func onGotRequestGrant(){
+    public func onGotRequestGrant(){
         print("onGotRequestGrant")
     }
     
